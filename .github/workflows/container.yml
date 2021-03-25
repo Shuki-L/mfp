@@ -30,8 +30,16 @@ jobs:
       - uses: actions/checkout@v2
       - run: yarn install
       - run: yarn build
+      - run: pwd
       - run: ls -ltr
 
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
+      - run: pwd
+      - run: ls -ltr
+      
+      
       - uses: jakejarvis/s3-sync-action@master
         with:
           args: --acl public-read --follow-symlinks --delete
@@ -41,3 +49,9 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           SOURCE_DIR: ./packages/container/dist
           DEST_DIR: container/latest
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script2
+        run: echo Hello, world2!
+      - run: pwd
+      - run: ls -ltr
