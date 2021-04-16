@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route, Router } from "react-router-dom";
+import { Switch, Route, Router, RouterProps } from "react-router-dom";
 import {
   StylesProvider,
   createGenerateClassName,
@@ -11,7 +11,7 @@ const generateClassName = createGenerateClassName({
   productionPrefix: "ac",
 });
 
-export default ({ history }) => {
+export default ({ history }: RouterProps) => {
   return (
     <div>
       <StylesProvider generateClassName={generateClassName}>

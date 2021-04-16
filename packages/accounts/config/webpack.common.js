@@ -4,6 +4,11 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.tsx?/,
+        use: "ts-loader",
+        exclude: /node_modules/,
+      },
+      {
         test: /\.m?js$/,
         exclude: /node_modules/,
         use: {
@@ -16,6 +21,11 @@ module.exports = {
       },
     ],
   },
+  // file resolutions
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js']
+  },
+  devtool: "source-map",
   plugins: [
     new HtmlWebpackPlugin({
       template: "./public/index.html",

@@ -15,7 +15,6 @@ const devConfig = {
       index: "/index.html",
     },
   },
-  devtool: "source-map",
   plugins: [
     new ModuleFederationPlugin({
       name: "accounts",

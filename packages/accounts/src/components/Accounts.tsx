@@ -22,6 +22,8 @@ import { AccountSummary } from "./AccountSummary";
 import { AccountDetails } from "./AccountDetails";
 
 import { accounts } from "../data/acoounts";
+import { yellow } from "@material-ui/core/colors";
+import { Account } from "../types/Account";
 
 function Copyright() {
   return (
@@ -68,6 +70,9 @@ const useStyles = makeStyles((theme) => ({
   },
   column: {
     flexBasis: "33.33%",
+  },
+  details: {
+    backgroundColor: "gray",
   },
   footer: {
     borderTop: `1px solid ${theme.palette.divider}`,
@@ -140,7 +145,7 @@ export default function Accounts() {
       <Container maxWidth="md" component="main">
         <div className={classes.root}>
           {accounts.map((account, i) => (
-            <Accordion key={account.accountId}>
+            <Accordion key={account.id}>
               <AccordionSummary
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel1a-content"

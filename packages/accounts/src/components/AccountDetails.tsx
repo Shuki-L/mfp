@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export function AccountDetails({ account }) {
+export function AccountDetails({ account }: any) {
   const classes = useStyles();
 
   return (
@@ -22,7 +22,7 @@ export function AccountDetails({ account }) {
       <div className={classes.column}>
         <ul>
           {account.details &&
-            account.details.map((item) => (
+            account.details.map((item: any) => (
               <Typography
                 component="li"
                 variant="subtitle1"

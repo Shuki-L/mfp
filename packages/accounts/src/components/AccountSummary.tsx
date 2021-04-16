@@ -1,6 +1,7 @@
 import React from "react";
 import { Theme, createStyles, makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
+import { Account } from "../types/Account";
 
 const useStyles = makeStyles((theme) => ({
   heading: {
@@ -15,7 +16,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export function AccountSummary({ account }) {
+
+type AccountSummaryProps = { account: Account };
+
+export function AccountSummary({ account }: AccountSummaryProps) {
   const classes = useStyles();
 
   return (
